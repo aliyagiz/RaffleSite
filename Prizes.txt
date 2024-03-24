@@ -1,0 +1,26 @@
+Mum,4
+Araba,1
+Iphone15 Pro Max Deluxe Omega Alpha, 3
+Kulaklık, 1
+Çikolata Kaplı Altın, 1
+Altın Kaplı Çikolata, 4
+Altın Çikolata Kabı, 1
+Çikolatalı Altın Kabı, 1
+Sil, 1
+Ördek,1
+Tavşan,1
+Kedi,1
+Köpek,1
+Kaplumbağa,1
+Havuç,1
+Patates,1
+Domates,1
+Kemik,1
+Erik,1
+Salatalık,1
+Klavye,1
+Bardak,1
+Bardaq,1
+Mause,1
+Mouse,1
+Uçak,1
