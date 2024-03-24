@@ -1,0 +1,63 @@
+﻿@{
+	ViewData["Title"] = "Raffle";
+	Layout = null;
+}
+@model RaffleEntity
+
+<link rel="stylesheet" href="~/css/Raffle.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<form method="post" enctype="multipart/form-data" asp-controller="Raffle" asp-action="StartRaffle">
+
+	<div class="bg-white shadow">
+		<div class="container" style="width:1200px;">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="p-3">
+						<h3>
+							Upload Participants 
+						</h3>
+						<input type="file" accept=".xlsx, .txt, .csv" id="participants-file" name="participantsFile" class="mb-2" />
+					</div>
+				</div>
+
+				<div class="col-lg-3">
+					<div class="p-3">
+						<h3>Upload Prizes</h3>
+						<input type="file" accept=".xlsx, .txt, .csv" id="prizes-file" name="prizesFile" class="mb-2" />
+					</div>
+				</div>
+
+				<div class="col-lg-3">
+					<div class="p-3">
+						<h3>Settings</h3>
+						<div class="form-check mb-2">
+							<input class="form-check-input" type="checkbox" value="" id="isMultiEntryEnabled" name="isMultiEntryEnabled">
+							<label class="form-check-label" for="isMultiEntryEnabled">
+								Enable Multiple Entry
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="isMultiWinEnabled" name="isMultiWinEnabled">
+							<label class="form-check-label" for="isMultiWinEnabled">
+								Enable Multiple Wins
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-2">
+					<div class="p-3">
+						<h3>Start Raffle</h3>
+						<button id="start-button" class="btn btn-custom btn-lg px-4 me-md-2" style="background: linear-gradient(to right, #ff416c, #ff4b2b); width:95%">Start</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

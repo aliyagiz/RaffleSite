@@ -1,0 +1,83 @@
+﻿@{
+	ViewData["Title"] = "🏆 Winners 👑";
+	Layout = "EmptyLayout";
+}
+@model RaffleEntity
+
+<link rel="stylesheet" href="~/css/GradientBody.css" asp-append-version="true" />
+
+<canvas id="confetti"></canvas>
+
+<div class="container mt-5">
+	<h2 style="margin-bottom:20px; text-align-last: center;">@ViewData["Title"]</h2>
+
+	@for (int i = 0; i < Model.participants.Count; i = i + 2)
+	{
+		<div class="row to-do-item" style="margin-bottom:15px; z-index:0">
+			<div class="col-sm-6 mb-3 mb-sm-0">
+				<div class="card bg-light shadow">
+					<div class="card-body">
+						<h5 class="card-title text-primary">@Model.participants[i].FullName</h5>
+
+						@if (!string.IsNullOrEmpty(Model.participants[i].Handle))
+						{
+							<span class="card-subtitle text-muted">@Model.participants[i].Handle | </span>
+						}
+						@if (!string.IsNullOrEmpty(Model.participants[i].PhoneNumber))
+						{
+							<span class="card-subtitle text-muted">@Model.participants[i].PhoneNumber | </span>
+						}
+						@if (!string.IsNullOrEmpty(Model.participants[i].MailAddress))
+						{
+							<span class="card-subtitle text-muted">@Model.participants[i].MailAddress</span>
+						}
+
+						<ul class="list-group">
+							@foreach (var prize in Model.participants[i].Prizes)
+							{
+								<li class="list-group-item prize-item">
+									<span class="prize-icon">&#127873;</span> <!-- 🏆 Unicode trophy character as an example icon -->
+							@prize.PrizeName
+								</li>
+							}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+
+				@if (i + 1 < Model.participants.Count)
+				{
+					<div class="card bg-light shadow">
+						<div class="card-body">
+							<h5 class="card-title text-primary">@Model.participants[i+1].FullName</h5>
+
+							@if (!string.IsNullOrEmpty(Model.participants[i + 1].Handle))
+							{
+								<span class="card-subtitle text-muted">@Model.participants[i+1].Handle | </span>
+							}
+							@if (!string.IsNullOrEmpty(Model.participants[i + 1].PhoneNumber))
+							{
+								<span class="card-subtitle text-muted">@Model.participants[i+1].PhoneNumber | </span>
+							}
+							@if (!string.IsNullOrEmpty(Model.participants[i + 1].MailAddress))
+							{
+								<span class="card-subtitle text-muted">@Model.participants[i+1].MailAddress</span>
+							}
+
+							<ul class="list-group">
+								@foreach (var prize in Model.participants[i + 1].Prizes)
+								{
+									<li class="list-group-item prize-item">
+										<span class="prize-icon">&#127873;</span> <!-- 🏆 Unicode trophy character as an example icon -->
+							@prize.PrizeName
+									</li>
+								}
+							</ul>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	}
+</div>
