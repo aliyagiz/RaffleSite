@@ -1,4 +1,4 @@
-using ÇekilişSitesi.Controllers;
+using CekilisSitesi.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
