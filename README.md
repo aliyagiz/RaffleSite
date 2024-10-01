@@ -1,4 +1,4 @@
-RaffteSite
+RaffteSite | https://rafflesitetest-a90c2e00f4a5.herokuapp.com/
 
 This project is the result of an experimental endeavor I undertook during my free time to address the question, "What would happen if I were to create something like this?" It aims to provide an answer to this question and is born out of curiosity and a desire to combat boredom.
 
